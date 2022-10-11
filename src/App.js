@@ -1,10 +1,19 @@
 import './App.css';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ArticlesListPage from './pages/ArticlesListPage';
+import ArticlePage from './pages/ArticlePage';
 
 function App() {
   return (
     <div className="App">
       <h1>My Typewriter</h1>
-      <div id="page-body">Don't move my page!</div>
+      <div id="page-body">
+        <HomePage />
+        <AboutPage />
+        <ArticlesListPage />
+        <ArticlePage />
+      </div>
     </div>
   );
 }
