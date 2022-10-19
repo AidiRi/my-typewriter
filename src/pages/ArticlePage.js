@@ -11,8 +11,9 @@ const ArticlePage = () => {
 	const article = articles.find(article => article.name === articleId);
 	// Best way to display code?: explicit/content jsx INSIDE return || implicit/content jsx OUTSIDE return??
 	const content = article => {
-		return article.content.map(paragraph => (
-			<p>{paragraph}</p>
+		return article.content.map((paragraph, i) => (
+			// Use key as i on lists that don't get modified
+			<p key={i}>{paragraph}</p>
 		));
 	};
 
