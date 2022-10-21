@@ -1,6 +1,7 @@
 //Functional
 import { useParams } from 'react-router-dom';
 import articles from './article-content.js';
+import NotFoundPage from './NotFoundPage';
 
 const ArticlePage = () => {
 	const { articleId } = useParams();
@@ -9,6 +10,11 @@ const ArticlePage = () => {
 	// 	const articleId = params.articleId;
 
 	const article = articles.find(article => article.name === articleId);
+
+	if (!article){
+		return <NotFoundPage />;
+	}
+
 	// Best way to display code?: explicit/content jsx INSIDE return || implicit/content jsx OUTSIDE return??
 	const content = article => {
 		return article.content.map((paragraph, i) => (
